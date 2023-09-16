@@ -11,6 +11,11 @@
         // Complete the following method
         public static int Add(int a, int b)
         {
+            if (a < 0 || b < 0)
+            {
+                throw new ArgumentException("a and b must be positive");
+            }
+
             return a + b;
         }
     }
