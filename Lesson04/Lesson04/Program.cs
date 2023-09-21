@@ -62,11 +62,26 @@
 
             // var newStudent = PrintRed<Student, int>(student, 2);
 
+            //Person john = new Student();
+            //john.Id = 4;
+            //john.Name = "John";
+            //Student student = (Student)john;
+            //student.StudentNumber = 5;
+
+            //Console.WriteLine(student.Name);
+            //student.DisplayInfo();
+
+            //Console.WriteLine();
+            //student.Name = "Student";
+
+            //Console.WriteLine(student.Name);
+            //Console.WriteLine(john.Name);
+
             #endregion
 
-            ExecuteOperation(5, 7, Add, PrintGreen<int>);
-            ExecuteOperation(5, 7, Multiply, PrintRed);
-            ExecuteOperation(5, 7, Subtract, PrintBlue);
+            //ExecuteOperation(5, 7, Add, PrintGreen<int>);
+            //ExecuteOperation(5, 7, Multiply, PrintRed);
+            //ExecuteOperation(5, 7, Subtract, PrintBlue);
         }
 
         #region Delegate methods
