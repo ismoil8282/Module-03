@@ -10,6 +10,7 @@
 
         static void Main(string[] args)
         {
+<<<<<<< Updated upstream
 
             #region List
 
@@ -113,6 +114,13 @@
 
             #endregion
         }
+=======
+     
+        }
+
+       
+       
+>>>>>>> Stashed changes
     }
 
     // Shtraflar

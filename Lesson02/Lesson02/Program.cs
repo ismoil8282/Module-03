@@ -6,39 +6,53 @@
         {
             #region Reference types, ref & out
 
-            //Person person = new Person() { Id = 1, Name = "Tom" };
-            //Person person1 = person;
+            Person person = new Person() { Id = 1, Name = "Tom" };
+            ///Person type dagi person nomli ozgarivchi yangi obyekt yaratyapti 
+            ///yani Steak da va Heap da joy ochilib steak da yangi adresi, ozgaruvchi nomi va Heapdagi adressni qiymat sifati berib qoyapti
+            Person person1 = person;
+            ///Person type dagi person1 nomli ozgarivchini person ga tenglashtirib qoyildi
+            ///Steakda yangi joy ochib yangi addres ozgaruvchi nomi va Heap dagi person qarab turgan qiymatga person1 ni qiymatini tenglashti
+            
+            Console.WriteLine(person.Name);
+            Console.WriteLine(person1.Name);
+            ///person ozgaruvchisi dagi Name Xususiyatni Ekranga chiqaradi 
+            ///person1 ozgaruvchi dagi Name Xususiyatni Ekranga chiqaradi 
+            person1.Name = "Alice";
+            ///person1 ozgaruvchisi dagi Name xususiyatiga yangi qiymat berilvotti 
+            ///yani person1 ga Heap da yangi joy ajratilib steakdagi qiymati Heapdagi yangi joyni adressiga tenglashtirib qoyildi
 
-            //Console.WriteLine(person.Name);
-            //Console.WriteLine(person1.Name);
+            DisplayInfo(ref person);
+            /// ref kalit sozi ishlatgan xolda person ozgaruvchisini displayInfo metodiga qiymati kopiyasa emas ozini berdi
 
-            //person1.Name = "Alice";
 
-            //Console.WriteLine(person.Name);
-            //Console.WriteLine(person1.Name);
+           
 
-            //DisplayInfo(ref person);
+            int a = 1;
+            /// a nomli yangi value type ozgaruvchi ochildi va 1 ga tenglandi 
+            /// Steakda yangi joy ochilib adressi ozgaruvchi nomi va qiymati berildi 
+            int b = 2;
+            /// b nomli yangi value type ozgaruvchi ochildi va 2 ga tenglandi 
+            /// Steakda yangi joy ochilib adressi ozgaruvchi nomi va qiymati berildi 
+            int result;
+            ///Steakda yangi adress va nomi yaratildi qiymati default berildi 
 
-            //Console.WriteLine(person.Name);
-            //Console.WriteLine(person1.Name);
+            int.TryParse(Console.ReadLine(), out result);
+            ///ozgaruvchi raqamlikka tekshirilvotti agar Conlose.Readline orqali kiritilgan raqam bolsa out kalit sozi orqali resultga teglashtirib qoyiladi
+            ///aks xolda error beradi
 
-            //int a = 1;
-            //int b = 2;
-            //int result;
+            Swap(ref a, ref b);
+            ///ref kalit sozi orqali  metod ga ozgaruvchini kopiyasi emas originalini bervoryapti
 
-            //int.TryParse(Console.ReadLine(), out result);
-
-            //Console.WriteLine(a);
-            //Console.WriteLine(b);
-
-            //Swap(ref a, ref b);
-
-            //Console.WriteLine(a);
-            //Console.WriteLine(b);
-
-            //Console.WriteLine(result);
-            //AddTen(out result);
-            //Console.WriteLine(result);
+            Console.WriteLine(a);
+            Console.WriteLine(b);
+            ///a bilan b ozgaruvchilarini ekranga chiqaryappti
+            
+            Console.WriteLine(result);
+            /// resul ozgaruvchisini ekranga chiqazvotti 
+            AddTen(out result);
+            /// out kalit sozi orqali resultni ozini metodga bervoryapti 
+            Console.WriteLine(result);
+            /// result ozgaruvchini ekranga chiqazvotti
 
             #endregion
 
@@ -47,20 +61,28 @@
                 Id = 50,
                 Name = "Struct person"
             };
-
+            ///Person toifadagi personForStruct ozgaruvchi da yangi obyekt yaratilvotii
+            ///yani Heapda joy yaratiladi steakda gi qiymatga heapdagi adress beriladi 
+           
             PersonStruct personStruct = new PersonStruct()
             {
                 Person = personForStruct,
                 Id = 1,
                 Name = "John"
             };
+            ///Personsreuct toifadagi personStruct ozgaruvchida yangi obyekt yaratilib Heapda yangi joy yaratilinadi
+            ///steakdagi qiymatiga heapdagi adress beriladi 
+            
 
-            PersonStruct personStruct1 = personStruct;
+            PersonStruct personStruct1 = personStruct
+            ///PersonStruct toifada yangi personStruct1 ozgaruvchisi ozchiladi va personStruct ozgaruvchisiga tenglanib Heapdagi bitta adressga qaratildi
 
             Console.WriteLine(personStruct.Name);
             Console.WriteLine(personStruct1.Name);
-
+            ///personStruct obyektini Name xususiyati ekranga chiqaradi
+            ///personStruct1 obyektini Name xususiyati ekranga chiqaradi
             personStruct.Name = "Tom";
+            
 
             Console.WriteLine(personStruct.Name);
             Console.WriteLine(personStruct1.Name);
@@ -102,7 +124,7 @@
                 Name = "Changed"
             };
 
-            // personTest.Name = "Changed";
+             personTest.Name = "Changed";
 
             Console.WriteLine(personTest.Name);
             Console.WriteLine(personTest1.Name);
