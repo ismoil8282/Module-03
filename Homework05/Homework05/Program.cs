@@ -50,7 +50,6 @@
                     break;
                 default: throw new CannotEnterAnotherSymbolException("Wrong symbol!");
             }
-            
             Console.Clear();
             Console.WriteLine($"{firstNum} {action} {secondNum} = {result}");
 

@@ -8,8 +8,8 @@ namespace Homework05
 {
     internal class CannotEnterAnotherSymbolException : Exception
     {
-        public CannotEnterAnotherSymbolException(string message)
-            : base (message)
+        public CannotEnterAnotherSymbolException(string str)
+            : base (str)
         {
 
         }
